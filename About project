@@ -1,0 +1,39 @@
+## Methodology
+
+This analysis combines Bitcoin market sentiment data (Fear/Greed classification) with historical trader-level execution data from Hyperliquid.  
+Both datasets were cleaned, timestamps were converted to a daily level, and records were aligned by date.
+
+Key metrics were engineered to evaluate trader behavior and performance, including:
+- Daily closed PnL per trader
+- Win rate (percentage of profitable trades)
+- Trade frequency per day
+- Trade size (USD) as a proxy for exposure
+- Long/short trade ratio
+
+Since explicit leverage values were not available, trade size in USD was used as an exposure proxy.  
+Traders were segmented into behavioral groups (high vs low exposure, frequent vs infrequent traders) to identify differential responses to market sentiment.
+
+Visual analysis (boxplots and bar charts) and aggregated statistics were used to compare performance and behavior across Fear and Greed regimes.
+
+---
+
+## Key Insights
+
+1. **Performance differs significantly by sentiment**  
+   Trader PnL shows higher volatility during Greed periods, indicating increased risk-taking. Fear periods exhibit more stable but lower overall returns.
+
+2. **Behavior shifts under Fear sentiment**  
+   During Fear days, traders reduce trade frequency and average trade size, reflecting a risk-off approach.
+
+3. **High exposure traders are more vulnerable during Fear periods**  
+   Traders with larger position sizes experience disproportionately worse outcomes on Fear days, suggesting weaker risk management under adverse sentiment.
+
+---
+
+## Strategy Recommendations
+
+1. **Risk Management Rule**  
+   During Fear sentiment days, traders should reduce exposure (position size) and avoid aggressive trading strategies, especially if they historically fall into the high-exposure segment.
+
+2. **Selective Aggression Rule**  
+   During Greed sentiment periods, increased trade frequency should be limited to frequent traders with a history of consistent profitability, while less consistent traders should cap risk to avoid drawdowns.
